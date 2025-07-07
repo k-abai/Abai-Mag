@@ -15,9 +15,15 @@ from makedata import makedata
 
 
 def synth_mp (pdyn, bx, by, bz, vx, vy, vz, tilt, lat_lim = np.pi/2, lon_lim = 3*np.pi/4, model_file = 'my_model2.keras'):
-    #make lat and lon
-    lat = np.linspace(-lat_lim, lat_lim, 10000)
-    lon = np.linspace(-lon_lim, lon_lim, 10000)
+    
+    #define lat and lon values
+    lat_vals = np.linspace(-lat_lim, lat_lim, 100)
+    lon_vals = np.linspace(-lon_lim, lon_lim, 100)
+   
+    # Create lat and lon arrays
+    lat = np.tile(lat_vals, 100)  # Repeat the lat array 100 times
+    lon = np.repeat(lon_vals, len(lat_vals))  # Repeat the lon array to match the length of lat
+    
     #make df
     
     #fill data_input
@@ -32,8 +38,7 @@ def synth_mp (pdyn, bx, by, bz, vx, vy, vz, tilt, lat_lim = np.pi/2, lon_lim = 3
     data_input['Vz'] = vz * np.ones(lat.shape)
     data_input['tilt[gsm rad]'] = tilt * np.ones(lat.shape)
     data_input['lat[gsm rad]'] = lat
-    #data_input['lon[gsm rad]'] = lon
-    data_input['lon[gsm rad]'] = np.zeros(lat.shape)
+    data_input['lon[gsm rad]'] = lon
     
     #reorder to match model
     order = ['lat[gsm rad]', 'lon[gsm rad]', 'bz[nT]', 'pdyn[nPa]', 'tilt[gsm rad]', 'Bx', 'By', 'Bz', 'Vx', 'Vy', 'Vz']
@@ -60,6 +65,7 @@ def synth_mp (pdyn, bx, by, bz, vx, vy, vz, tilt, lat_lim = np.pi/2, lon_lim = 3
     lat = data_input['lat[gsm rad]'].to_numpy()
     lon = data_input['lon[gsm rad]'].to_numpy()
     r = np.reshape(r,len(r))
+    
     #Convert to XYZ
     X = r* np.cos(lat)* np.cos(lon)
     Y = r* np.cos(lat)* np.sin(lon)
