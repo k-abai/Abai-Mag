@@ -35,6 +35,16 @@ print(result)
 
 The utilities in `rplot.py` and `Valtest.py` offer additional ways to visualise or validate model output.
 
+## Data Visualisation
+
+Use `rplot.py` to explore the magnetopause crossings in your dataset:
+
+* **3D scatter** &ndash; plot the predicted magnetopause points in three dimensions to check how they cluster in space.
+* **Radius vs Bz** &ndash; create a scatter of radius (`r`) against the z component of the magnetic field (`Bz`) where the third axis encodes the frequency of observations. Viewed from above this appears as a heat map. Southward `Bz` allows solar wind to enter the magnetosphere and typically reduces the radius.
+* Simple histograms of `r`, `Bz` and dynamic pressure (`pdyn`) reveal their most common values.
+
+These plots show that most radii fall between 0&nbsp;and&nbsp;5&nbsp;RE while `Bz` usually lies within roughly ±10&nbsp;nT. With more labelled crossings the model can be trained on a larger set and the validation loss (about 2.8&nbsp;RE with the sample data) generally improves.
+
 ## License
 
 This project is distributed under the terms of the [MIT License](LICENSE).
