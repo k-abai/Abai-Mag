@@ -1,6 +1,13 @@
 # Abai-Mag
 
+
+Abai-Mag is a small collection of Python scripts for training a neural network to
+predict magnetopause location. It learns from magnetopause crossing data and
+solar wind parameters (taken from the OMNI database) and can then estimate the
+radial distance or full 3‑D location of the boundary from simple input values.
+
 Abai-Mag is a small collection of Python scripts for training a neural network to predict magnetopause location. The code trains a model using magnetopause crossing data and solar wind parameters taken from the OMNI database. The resulting model can be used to predict the radial distance or 3‑D location of the magnetopause from simple input parameters.
+
 
 ## Installation
 
@@ -10,6 +17,14 @@ Abai-Mag is a small collection of Python scripts for training a neural network t
    pip install numpy pandas matplotlib seaborn scikit-learn tensorflow joblib
    ```
 3. Place `omni_data.h5` (OMNI solar wind data in HDF5 format) in the project directory. The training and prediction scripts expect this file to be available when calling `makedata`.
+
+## Dataset
+
+Along with the OMNI file, you will need a CSV of magnetopause crossings. Its
+location is configured in `model2.py` via the `mag_data_path` variable. The
+`makedata` helper combines the crossing data with values from `omni_data.h5` to
+produce the training set used by the neural network.
+
 
 ## Training
 
@@ -34,6 +49,26 @@ print(result)
 ```
 
 The utilities in `rplot.py` and `Valtest.py` offer additional ways to visualise or validate model output.
+
+
+## Data Visualisation
+
+Use `rplot.py` to explore the magnetopause crossings in your dataset:
+
+* **3D scatter** &ndash; plot the predicted magnetopause points in three dimensions to check how they cluster in space.
+* **Radius vs Bz** &ndash; create a scatter of radius (`r`) against the z component of the magnetic field (`Bz`) where the third axis encodes the frequency of observations. Viewed from above this appears as a heat map. Southward `Bz` allows solar wind to enter the magnetosphere and typically reduces the radius.
+* Simple histograms of `r`, `Bz` and dynamic pressure (`pdyn`) reveal their most common values.
+
+These plots show that most radii fall between 0&nbsp;and&nbsp;5&nbsp;RE while `Bz` usually lies within roughly ±10&nbsp;nT. With more labelled crossings the model can be trained on a larger set and the validation loss (about 2.8&nbsp;RE with the sample data) generally improves.
+
+## Synthetic Magnetopause
+
+The script `synth_mp.py` is the final product of this project. It loads a saved
+model and generates a synthetic magnetopause surface for any set of solar wind
+conditions. The routine sweeps through latitude and longitude angles, predicts
+the corresponding radial distance and then plots the boundary as 3‑D and planar
+scatter plots. This provides an immediate visual impression of the magnetopause
+shape under the specified conditions.
 
 ## License
 
