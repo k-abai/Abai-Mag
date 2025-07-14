@@ -1,9 +1,13 @@
 # Abai-Mag
 
+
 Abai-Mag is a small collection of Python scripts for training a neural network to
 predict magnetopause location. It learns from magnetopause crossing data and
 solar wind parameters (taken from the OMNI database) and can then estimate the
 radial distance or full 3‑D location of the boundary from simple input values.
+
+Abai-Mag is a small collection of Python scripts for training a neural network to predict magnetopause location. The code trains a model using magnetopause crossing data and solar wind parameters taken from the OMNI database. The resulting model can be used to predict the radial distance or 3‑D location of the magnetopause from simple input parameters.
+
 
 ## Installation
 
@@ -20,6 +24,7 @@ Along with the OMNI file, you will need a CSV of magnetopause crossings. Its
 location is configured in `model2.py` via the `mag_data_path` variable. The
 `makedata` helper combines the crossing data with values from `omni_data.h5` to
 produce the training set used by the neural network.
+
 
 ## Training
 
@@ -44,6 +49,7 @@ print(result)
 ```
 
 The utilities in `rplot.py` and `Valtest.py` offer additional ways to visualise or validate model output.
+
 
 ## Data Visualisation
 

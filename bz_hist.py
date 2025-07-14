@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov  5 10:48:48 2024
+
+@author: kekea
+"""
+
+import pandas as pd #imports pandas as pd
+import matplotlib.pyplot as plt #imports matplotlib as plt
+
+
+data = pd.read_csv('C:\\Users\\kekea\\OneDrive\\Desktop\\MP_list_CSV.txt', header = None ) #read txt file into array
+data.columns = data.iloc[0] #names colomns using first row of txt 
+data = data[1:] #removing first row 
+# Extract the 9th, 10th, and 13th columns 
+data_subset = data.iloc[:, 8:13]
+
+
+# Attempt to strictly convert all data to numeric
+data_subset = data_subset.apply(pd.to_numeric, errors='coerce')
+# Drop rows with NaN values
+data_subset.dropna(inplace=True)
+
+bz = data_subset['bz[nT]'] #define bz
+
+print(data_subset)#print updated data_subset
+
+#plot histogram
+plt.title("bz frequency")
+plt.xlabel("bz[nT]")
+plt.hist(bz)
+plt.show() 
