@@ -48,18 +48,16 @@ result = abaimp(1.0, 1.0, -0.8, 1.9, -0.2, -3, -0.2, -0.8, -400, 3, -8.5)
 print(result)
 ```
 
-The utilities in `rplot.py` and `Valtest.py` offer additional ways to visualise or validate model output.
+The utilities in `rplot.py` and `valtest.py` offer additional ways to visualise or validate model output.
 
 
 ## Data Visualisation
 
-Use `rplot.py` to explore the magnetopause crossings in your dataset:
+Use `rplot.py` to explore the magnetopause crossings in your dataset by plotting the predicted magnetopause points in three dimensions to check how they cluster in space.
 
-* **3D scatter** &ndash; plot the predicted magnetopause points in three dimensions to check how they cluster in space.
-* **Radius vs Bz** &ndash; create a scatter of radius (`r`) against the z component of the magnetic field (`Bz`) where the third axis encodes the frequency of observations. Viewed from above this appears as a heat map. Southward `Bz` allows solar wind to enter the magnetosphere and typically reduces the radius.
-* Simple histograms of `r`, `Bz` and dynamic pressure (`pdyn`) reveal their most common values.
+* Simple histograms of `r_hist.py`, `Bz_hist.py` and dynamic pressure (`pdyn_hist.py`) reveal their most common values.
 
-These plots show that most radii fall between 0&nbsp;and&nbsp;5&nbsp;RE while `Bz` usually lies within roughly ±10&nbsp;nT. With more labelled crossings the model can be trained on a larger set and the validation loss (about 2.8&nbsp;RE with the sample data) generally improves.
+These plots show that most radii fall between 0 and 5 RE while `Bz` usually lies within roughly ±10 nT, and pdyn concentrates around 3 nPa. With more labelled crossings the model can be trained on a larger set and the validation loss (about 2.8 RE with the sample data) generally improves.
 
 ## Synthetic Magnetopause
 
@@ -69,6 +67,14 @@ conditions. The routine sweeps through latitude and longitude angles, predicts
 the corresponding radial distance and then plots the boundary as 3‑D and planar
 scatter plots. This provides an immediate visual impression of the magnetopause
 shape under the specified conditions.
+
+## Acknowledgment
+
+I would like to extend my sincere thanks to **Connor O'Brien** ([connor-obrien888](https://github.com/connor-obrien888)) for his mentorship and support throughout the development of this project.
+
+Connor's guidance helped shape both the structure and logic of the codebase, and his contributions were instrumental in my learning process. Special thanks for providing the `sw_loader.py` module, which played a key role in the implementation.
+
+> His work: [https://github.com/connor-obrien888](https://github.com/connor-obrien888)
 
 ## License
 
