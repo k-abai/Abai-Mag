@@ -48,12 +48,12 @@ result = abaimp(1.0, 1.0, -0.8, 1.9, -0.2, -3, -0.2, -0.8, -400, 3, -8.5)
 print(result)
 ```
 
-The utilities in `rplot.py` and `valtest.py` offer additional ways to visualise or validate model output.
+The utilities in `xyz_predict.py` and `valtest.py` offer additional ways to visualise or validate model output.
 
 
 ## Data Visualisation
 
-Use `rplot.py` to explore the magnetopause crossings in your dataset by plotting the predicted magnetopause points in three dimensions to check how they cluster in space.
+Use `xyz_predict.py` to explore the magnetopause crossings in your dataset by plotting the predicted magnetopause points in three dimensions to check how they cluster in space.
 
 * Simple histograms of `r_hist.py`, `Bz_hist.py` and dynamic pressure (`pdyn_hist.py`) reveal their most common values.
 
