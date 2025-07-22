@@ -68,6 +68,20 @@ the corresponding radial distance and then plots the boundary as 3‑D and plana
 scatter plots. This provides an immediate visual impression of the magnetopause
 shape under the specified conditions.
 
+## Jupyter Lab Demo
+
+A short demonstration notebook is available in `notebooks/synth_mp_demo.ipynb`.
+To explore the synthetic magnetopause interactively, install JupyterLab and
+launch it from the repository root:
+
+```bash
+pip install jupyterlab
+jupyter lab
+```
+
+Open the `synth_mp_demo.ipynb` notebook and run the provided cell to display the
+magnetopause surface under example solar wind conditions.
+
 ## Acknowledgment
 
 I would like to extend my sincere thanks to **Connor O'Brien** ([connor-obrien888](https://github.com/connor-obrien888)) for his mentorship and support throughout the development of this project.
