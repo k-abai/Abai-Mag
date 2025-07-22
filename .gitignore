@@ -36,3 +36,13 @@ override.tf.json
 .terraformrc
 terraform.rc
 tfenv/
+
+# Ignore all data files
+data/
+*.h5
+*.csv
+*.npy
+*.pkl
+
+# Ignore venv 
+venv/
