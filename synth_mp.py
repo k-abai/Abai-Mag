@@ -14,7 +14,7 @@ import joblib
 from makedata import makedata
 
 
-def synth_mp (pdyn, bx, by, bz, vx, vy, vz, tilt, lat_lim = np.pi/2, lon_lim = 3*np.pi/4, model_file = 'my_model2.keras'):
+def synth_mp (pdyn, bx, by, bz, vx, vy, vz, tilt, lat_lim = np.pi/2, lon_lim = np.pi/2, model_file = 'my_model2.keras'):
     
     #define lat and lon values
     lat_vals = np.linspace(-lat_lim, lat_lim, 100)
