@@ -28,6 +28,3 @@ def makedata(df):
     data = data.dropna(axis = 0,how = 'any')
 
     return data
-
-    
-    

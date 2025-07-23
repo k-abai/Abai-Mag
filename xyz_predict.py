@@ -55,6 +55,3 @@ def XYZ_predict (df, model_file = 'my_model2.keras'):
     
     XYZ_predict = [X,Y,Z]
     return XYZ_predict
-    
-
-    

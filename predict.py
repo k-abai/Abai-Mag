@@ -4,6 +4,7 @@ Created on Mon Mar 17 11:46:42 2025
 
 @author: kekea
 """
+#made up test data [1,1,-.8,1.9,-0.2,-3,-0.2,-0.8,-400,3,-8.5]
 
 import pandas as pd
 import tensorflow as tf
@@ -26,6 +27,4 @@ def abaimp(lat,lon,bz,pdyn,tilt,Bx,By,Bz,Vx,Vy,Vz, model_file = 'my_model2.keras
     prediction = new_model.predict(df)
     
 # Return the predicted value
-    return prediction,
-
-#made up test data [1,1,-.8,1.9,-0.2,-3,-0.2,-0.8,-400,3,-8.5]
+    return prediction

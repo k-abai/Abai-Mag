@@ -98,7 +98,7 @@ magnetopause surface under example solar wind conditions.
 
 ## Importance
 
-The uniqueness of this research lies in the dynamic nature of the magnetopause. Unlike most existing models that rely heavily on theoretical formulations, this study introduces a data-driven approach trained exclusively on empirical observations focused on the r[re] position influenced by solar wind conditions. While it focuses specifically on the dayside magnetopause, the model offers a fresh perspective by capturing variability and interactions, contributing a novel and practical viewpoint to magnetopause modeling.
+The uniqueness of this research lies in the dynamic nature of the magnetopause. Unlike most existing models that rely heavily on theoretical formulations, this study introduces a data-driven approach trained exclusively on empirical observations focused on the radial distance (in Earth radii) influenced by solar wind conditions. While it focuses specifically on the dayside magnetopause, the model offers a fresh perspective by capturing variability and interactions, contributing a novel and practical viewpoint to magnetopause modeling.
 
 ## Acknowledgment
 
