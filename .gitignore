@@ -36,15 +36,16 @@ override.tf.json
 .terraformrc
 terraform.rc
 tfenv/
+venv/
+.venv/
 
 # Ignore all data files
-data/
 *.h5
 *.csv
 *.npy
 *.pkl
 
-# model files
+# Ignore model files
 *.keras
 
 # Ignore any local configuration files that might be used for development
