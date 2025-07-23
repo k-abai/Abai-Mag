@@ -68,6 +68,13 @@ the corresponding radial distance and then plots the boundary as 3‑D and plana
 scatter plots. This provides an immediate visual impression of the magnetopause
 shape under the specified conditions.
 
+```python
+from synth_mp import synth_mp
+
+# Example solar wind parameters
+synth_mp(pdyn=2.5, bx=0.0, by=0.0, bz=-5.0, vx=-400, vy=0.0, vz=0.0, tilt=0.0)
+print(result)
+```
 ## Jupyter Lab Demo
 
 A short demonstration notebook is available in `notebooks/synth_mp_demo.ipynb`.
