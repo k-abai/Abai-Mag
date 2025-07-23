@@ -3,10 +3,7 @@
 
 Abai-Mag is a small collection of Python scripts for training a neural network to
 predict magnetopause location. It learns from magnetopause crossing data and
-solar wind parameters (taken from the OMNI database) and can then estimate the
-radial distance or full 3‑D location of the boundary from simple input values.
-
-Abai-Mag is a small collection of Python scripts for training a neural network to predict magnetopause location. The code trains a model using magnetopause crossing data and solar wind parameters taken from the OMNI database. The resulting model can be used to predict the radial distance or 3‑D location of the magnetopause from simple input parameters.
+solar wind parameters (taken from the OMNI database). The resulting model can be used to predict the radial distance or 3‑D location of the magnetopause from simple input parameters.
 
 
 ## Installation
@@ -18,6 +15,13 @@ Abai-Mag is a small collection of Python scripts for training a neural network t
    ```
 3. Place `omni_data.h5` (OMNI solar wind data in HDF5 format) in the project directory. The training and prediction scripts expect this file to be available when calling `makedata`.
 
+## Obtaining Solar Wind Data
+
+1. Visit https://omniweb.gsfc.nasa.gov/ and open the OMNIWeb Data Explorer.
+2. Select the High Resolution OMNI 1-Minute dataset.
+3. Set the output format to HDF5 and submit the request.
+4. Save the resulting file as `omni_data.h5` in the repository root.
+
 ## Dataset
 
 Along with the OMNI file, you will need a CSV of magnetopause crossings. Its
@@ -25,6 +29,9 @@ location is configured in `model2.py` via the `mag_data_path` variable. The
 `makedata` helper combines the crossing data with values from `omni_data.h5` to
 produce the training set used by the neural network.
 
+### Magnetopause Crossing List
+
+The repository does not include the crossing data used for training. Magnetometer observations from missions such as THEMIS, Cluster or MMS can be downloaded from [NASA CDAWeb](https://cdaweb.gsfc.nasa.gov/). Compile a CSV with the columns expected by `model2.py` and set `mag_data_path` to its location or use other data with columns expected by `model2.py`.
 
 ## Training
 
@@ -49,7 +56,6 @@ print(result)
 ```
 
 The utilities in `xyz_predict.py` and `valtest.py` offer additional ways to visualise or validate model output.
-
 
 ## Data Visualisation
 
