@@ -75,9 +75,14 @@ from synth_mp import synth_mp
 synth_mp(pdyn=2.5, bx=0.0, by=0.0, bz=-5.0, vx=-400, vy=0.0, vz=0.0, tilt=0.0)
 print(result)
 ```
+
+### Importance
+
+The uniqueness of this research lies in the dynamic nature of the magnetopause. Unlike most existing models that rely heavily on theoretical formulations, this study introduces a data-driven approach trained exclusively on empirical observations focused on the r[re] position influenced by solar wind conditions. While it focuses specifically on the dayside magnetopause, the model offers a fresh perspective by capturing variability and interactions, contributing a novel and practical viewpoint to magnetopause modeling.
+
 ## Jupyter Lab Demo
 
-A short demonstration notebook is available in `notebooks/synth_mp_demo.ipynb`.
+A short demonstration notebook is available in `analysis.ipynb`.
 To explore the synthetic magnetopause interactively, install JupyterLab and
 launch it from the repository root:
 
@@ -86,7 +91,7 @@ pip install jupyterlab
 jupyter lab
 ```
 
-Open the `synth_mp_demo.ipynb` notebook and run the provided cell to display the
+Open the `analysis.ipynb` notebook and run the provided cell to display the
 magnetopause surface under example solar wind conditions.
 
 ## Acknowledgment
