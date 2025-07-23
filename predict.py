@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Mar 17 11:46:42 2025
-
+Helper to obtain a single magnetopause distance prediction using the
+pre-trained neural network model.
 @author: kekea
 """
 #made up test data [1,1,-.8,1.9,-0.2,-3,-0.2,-0.8,-400,3,-8.5]

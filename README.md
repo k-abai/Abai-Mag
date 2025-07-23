@@ -61,7 +61,7 @@ The utilities in `xyz_predict.py` and `valtest.py` offer additional ways to visu
 
 Use `xyz_predict.py` to explore the magnetopause crossings in your dataset by plotting the predicted magnetopause points in three dimensions to check how they cluster in space.
 
-* Simple histograms of `r_hist.py`, `Bz_hist.py` and dynamic pressure (`pdyn_hist.py`) reveal their most common values.
+* Simple histograms of `r_hist.py`, `bz_hist.py` and dynamic pressure (`pdyn_hist.py`) reveal their most common values.
 
 These plots show that most radii fall between 0 and 5 RE while `Bz` usually lies within roughly ±10 nT, and pdyn concentrates around 3 nPa. With more labelled crossings the model can be trained on a larger set and the validation loss (about 2.8 RE with the sample data) generally improves.
 

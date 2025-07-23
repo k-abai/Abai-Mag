@@ -13,7 +13,7 @@ from tensorflow import keras
 import joblib
 from makedata import makedata
 
-def XYZ_predict (df, model_file = 'my_model2.keras'):
+def xyz_predict (df, model_file = 'my_model2.keras'):
     data = makedata(df)
     #df of useful variables
     df_subset = data.iloc[:, 8:20] 
@@ -53,5 +53,5 @@ def XYZ_predict (df, model_file = 'my_model2.keras'):
     Y = r * (np.sin(lat)) * np.sin(lon)
     Z = r * (np.cos(lat))
     
-    XYZ_predict = [X,Y,Z]
-    return XYZ_predict
+    xyz_predict = [X,Y,Z]
+    return xyz_predict

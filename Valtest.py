@@ -14,7 +14,7 @@ import joblib
 from matplotlib.colors import LogNorm  # for log color scale
 from makedata import makedata
 
-def Valtest(df,model_file = 'my_model2.keras'):
+def valtest(df,model_file = 'my_model2.keras'):
     data = makedata(df)
     #df of useful variables
     df_subset = data.iloc[:, 8:20] 
