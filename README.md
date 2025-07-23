@@ -76,10 +76,6 @@ synth_mp(pdyn=2.5, bx=0.0, by=0.0, bz=-5.0, vx=-400, vy=0.0, vz=0.0, tilt=0.0)
 print(result)
 ```
 
-### Importance
-
-The uniqueness of this research lies in the dynamic nature of the magnetopause. Unlike most existing models that rely heavily on theoretical formulations, this study introduces a data-driven approach trained exclusively on empirical observations focused on the r[re] position influenced by solar wind conditions. While it focuses specifically on the dayside magnetopause, the model offers a fresh perspective by capturing variability and interactions, contributing a novel and practical viewpoint to magnetopause modeling.
-
 ## Jupyter Lab Demo
 
 A short demonstration notebook is available in `analysis.ipynb`.
@@ -94,11 +90,15 @@ jupyter lab
 Open the `analysis.ipynb` notebook and run the provided cell to display the
 magnetopause surface under example solar wind conditions.
 
+## Importance
+
+The uniqueness of this research lies in the dynamic nature of the magnetopause. Unlike most existing models that rely heavily on theoretical formulations, this study introduces a data-driven approach trained exclusively on empirical observations focused on the r[re] position influenced by solar wind conditions. While it focuses specifically on the dayside magnetopause, the model offers a fresh perspective by capturing variability and interactions, contributing a novel and practical viewpoint to magnetopause modeling.
+
 ## Acknowledgment
 
 I would like to extend my sincere thanks to **Connor O'Brien** ([connor-obrien888](https://github.com/connor-obrien888)) for his mentorship and support throughout the development of this project.
 
-Connor's guidance helped shape both the structure and logic of the codebase, and his contributions were instrumental in my learning process. Special thanks for providing the `sw_loader.py` module, which played a key role in the implementation.
+Connor's guidance helped shape both the structure and logic of the codebase, and his contributions were instrumental in my learning process. Special thanks for providing the `sw_loader.py` module, which played a key role in development.
 
 > His work: [https://github.com/connor-obrien888](https://github.com/connor-obrien888)
 

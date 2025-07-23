@@ -44,5 +44,9 @@ data/
 *.npy
 *.pkl
 
-# Ignore venv 
-venv/
+# model files
+*.keras
+
+# Ignore any local configuration files that might be used for development
+__pycache__/
+*.py[cod]
