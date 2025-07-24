@@ -9,7 +9,7 @@ solar wind parameters (taken from the OMNI database). The resulting model can be
 ## Installation
 
 1. Clone this repository.
-2. Create a Python 3 environment and install the required packages:
+2. Create a Python 3.10 environment and install the required packages:
    ```bash
    pip install numpy pandas matplotlib seaborn scikit-learn tensorflow joblib
    ```
