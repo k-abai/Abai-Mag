@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 30 16:11:00 2025
-
-@author: kekea
-"""
+"""Predict positions in XYZ coordinates from magnetopause data."""
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,7 +9,23 @@ from tensorflow import keras
 import joblib
 from makedata import makedata
 
-def xyz_predict (df, model_file = 'my_model2.keras'):
+
+def xyz_predict(df, model_file='my_model2.keras'):
+    """Predict XYZ positions from magnetopause observations.
+
+    Parameters
+    ----------
+    df : DataFrame
+        Magnetopause dataset with model input columns.
+    model_file : str, optional
+        Path to the trained Keras model.
+
+    Returns
+    -------
+    list of DataFrame
+        List containing the predicted X, Y and Z coordinates.
+    """
+
     data = makedata(df)
     #df of useful variables
     df_subset = data.iloc[:, 8:20] 
@@ -55,3 +67,4 @@ def xyz_predict (df, model_file = 'my_model2.keras'):
     
     xyz_predict = [X,Y,Z]
     return xyz_predict
+

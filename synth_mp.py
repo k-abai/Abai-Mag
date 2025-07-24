@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jun  5 15:30:49 2025
-
-@author: kekea
-"""
+"""Create synthetic magnetopause boundary visualizations."""
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -14,8 +10,23 @@ import joblib
 from makedata import makedata
 
 
-def synth_mp (pdyn, bx, by, bz, vx, vy, vz, tilt, lat_lim = np.pi/2, lon_lim = np.pi/2, model_file = 'my_model2.keras'):
-    
+def synth_mp(pdyn, bx, by, bz, vx, vy, vz, tilt, lat_lim=np.pi/2, lon_lim=np.pi/2, model_file='my_model2.keras'):
+    """Create synthetic magnetopause positions using a trained model.
+
+    Parameters
+    ----------
+    pdyn, bx, by, bz, vx, vy, vz, tilt : float
+        Solar wind conditions used to compute the boundary.
+    lat_lim, lon_lim : float, optional
+        Angular limits for the latitude and longitude grid.
+    model_file : str, optional
+        Path to the trained Keras model.
+
+    Returns
+    -------
+    None
+        Displays multiple plots of the synthesized boundary.
+    """
     #define lat and lon values
     lat_vals = np.linspace(-lat_lim, lat_lim, 100)
     lon_vals = np.linspace(-lon_lim, lon_lim, 100)
@@ -118,18 +129,3 @@ def synth_mp (pdyn, bx, by, bz, vx, vy, vz, tilt, lat_lim = np.pi/2, lon_lim = n
     plt.show()
     
     return None
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-

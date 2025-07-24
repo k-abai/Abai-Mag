@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Nov  5 11:06:20 2024
-
-@author: kekea
-"""
+"""Plot a histogram of dynamic pressure values."""
 
 import pandas as pd #imports pandas as pd
 import matplotlib.pyplot as plt #imports matplotlib as plt

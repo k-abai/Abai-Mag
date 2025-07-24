@@ -1,19 +1,39 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 13 17:15:56 2025
-
-@author: kekea
-"""
+"""Time conversion utilities for magnetopause data."""
 import numpy as np
 import pandas as pd
 
 #convert float to int for timestamp
 def time_int(df):
-    df_time = df[['year','month','day','hour','minute','second']]
+    """Convert year, month, day and time columns to integers.
+
+    Parameters
+    ----------
+    df : DataFrame
+        Data containing date and time columns.
+
+    Returns
+    -------
+    DataFrame
+        Integer typed subset with date and time columns.
+    """
+    df_time = df[['year', 'month', 'day', 'hour', 'minute', 'second']]
     df_time_int = df_time.astype(int)
     return df_time_int
 #function extraxts timestamp in string from mag data and creates
 def timestamp(df):
+    """Create pandas timestamps from numeric date columns.
+
+    Parameters
+    ----------
+    df : DataFrame
+        Input dataframe containing integer date and time columns.
+
+    Returns
+    -------
+    Series
+        Series of pandas timestamps in UTC.
+    """
     df = time_int(df)
     
     df2 = df #make second df for 'end'

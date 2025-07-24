@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 30 10:18:17 2025
-
-@author: kekea
-"""
+"""Plot predicted versus true magnetopause radii."""
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -14,8 +10,23 @@ import joblib
 from matplotlib.colors import LogNorm  # for log color scale
 from makedata import makedata
 
-def valtest(df,model_file = 'my_model2.keras'):
+def valtest(df, model_file='my_model2.keras'):
+    """Generate a hexbin plot comparing predictions with target radii.
+
+    Parameters
+    ----------
+    df : DataFrame
+        Input dataset containing measurement values.
+    model_file : str, optional
+        File path to the trained Keras model to load.
+
+    Returns
+    -------
+    None
+        The plot is displayed directly and nothing is returned.
+    """
     data = makedata(df)
+
     #df of useful variables
     df_subset = data.iloc[:, 8:20] 
    
@@ -56,10 +67,8 @@ def valtest(df,model_file = 'my_model2.keras'):
     
     #Add the x = y line
     min_val, max_val = plt.xlim()  
-    plt.plot([min_val, max_val], [min_val, max_val], 'k--')  
+    plt.plot([min_val, max_val], [min_val, max_val], 'k--')
 
     plt.show()
-    
-    return None
 
-    
+    return None
