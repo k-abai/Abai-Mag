@@ -1,15 +1,23 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Apr 16 15:23:12 2025
-
-@author: kekea
-"""
+"""Helpers for augmenting magnetopause data with solar wind values."""
 
 import numpy as np
 import pandas as pd
 from timestamp import timestamp
 
 def makedata(df):
+    """Interpolate OMNI data and append to a magnetopause dataframe.
+
+    Parameters
+    ----------
+    df : DataFrame
+        Magnetopause observations with numeric date columns.
+
+    Returns
+    -------
+    DataFrame
+        Filtered dataframe after 1994 augmented with solar wind values.
+    """
     #cut 
     data = df.loc[df['year']>1994,:] 
     #gets timestamp of data
@@ -28,6 +36,3 @@ def makedata(df):
     data = data.dropna(axis = 0,how = 'any')
 
     return data
-
-    
-    

@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Nov  5 10:48:48 2024
-
-@author: kekea
-"""
+"""Plot a histogram of Bz values."""
 
 import pandas as pd #imports pandas as pd
 import matplotlib.pyplot as plt #imports matplotlib as plt

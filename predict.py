@@ -1,17 +1,27 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 17 11:46:42 2025
-
-@author: kekea
-"""
+"""Single-sample prediction routine for magnetopause radius."""
 
 import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
 import joblib
 
-def abaimp(lat,lon,bz,pdyn,tilt,Bx,By,Bz,Vx,Vy,Vz, model_file = 'my_model2.keras'):
-    input_data = [lat,lon,bz,pdyn,tilt,Bx,By,Bz,Vx,Vy,Vz]
+def abaimp(lat, lon, bz, pdyn, tilt, Bx, By, Bz, Vx, Vy, Vz, model_file='my_model2.keras'):
+    """Predict the magnetopause radius for a single input sample.
+
+    Parameters
+    ----------
+    lat, lon, bz, pdyn, tilt, Bx, By, Bz, Vx, Vy, Vz : float
+        Environment parameters describing the solar wind conditions.
+    model_file : str, optional
+        File path to the trained Keras model to use.
+
+    Returns
+    -------
+    ndarray
+        Array with the predicted radius.
+    """
+    input_data = [lat, lon, bz, pdyn, tilt, Bx, By, Bz, Vx, Vy, Vz]
     scaler = joblib.load('input_scaler.pkl')
     norm_input = scaler.transform([input_data])
 

@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Nov  5 10:22:09 2024
-
-@author: kekea
-"""
+"""Plot a histogram of magnetopause radius values."""
 
 
 import pandas as pd #imports pandas as pd
