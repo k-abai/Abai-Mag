@@ -3,20 +3,24 @@
 
 Abai-Mag is a small collection of Python scripts for training a neural network to
 predict magnetopause location. It learns from magnetopause crossing data and
-solar wind parameters (taken from the OMNI database) and can then estimate the
-radial distance or full 3‑D location of the boundary from simple input values.
-
-Abai-Mag is a small collection of Python scripts for training a neural network to predict magnetopause location. The code trains a model using magnetopause crossing data and solar wind parameters taken from the OMNI database. The resulting model can be used to predict the radial distance or 3‑D location of the magnetopause from simple input parameters.
+solar wind parameters (taken from the OMNI database). The resulting model can be used to predict the radial distance or 3‑D location of the magnetopause from simple input parameters.
 
 
 ## Installation
 
 1. Clone this repository.
-2. Create a Python 3 environment and install the required packages:
+2. Create a Python 3.10 environment and install the required packages:
    ```bash
    pip install numpy pandas matplotlib seaborn scikit-learn tensorflow joblib
    ```
 3. Place `omni_data.h5` (OMNI solar wind data in HDF5 format) in the project directory. The training and prediction scripts expect this file to be available when calling `makedata`.
+
+## Obtaining Solar Wind Data
+
+1. Visit https://omniweb.gsfc.nasa.gov/ and open the OMNIWeb Data Explorer.
+2. Select the High Resolution OMNI 1-Minute dataset.
+3. Set the output format to HDF5 and submit the request.
+4. Save the resulting file as `omni_data.h5` in the repository root.
 
 ## Dataset
 
@@ -25,6 +29,9 @@ location is configured in `model2.py` via the `mag_data_path` variable. The
 `makedata` helper combines the crossing data with values from `omni_data.h5` to
 produce the training set used by the neural network.
 
+### Magnetopause Crossing List
+
+The repository does not include the crossing data used for training. Magnetometer observations from missions such as THEMIS, Cluster or MMS can be downloaded from [NASA CDAWeb](https://cdaweb.gsfc.nasa.gov/). Compile a CSV with the columns expected by `model2.py` and set `mag_data_path` to its location or use other data with columns expected by `model2.py`.
 
 ## Training
 
@@ -50,12 +57,11 @@ print(result)
 
 The utilities in `xyz_predict.py` and `valtest.py` offer additional ways to visualise or validate model output.
 
-
 ## Data Visualisation
 
 Use `xyz_predict.py` to explore the magnetopause crossings in your dataset by plotting the predicted magnetopause points in three dimensions to check how they cluster in space.
 
-* Simple histograms of `r_hist.py`, `Bz_hist.py` and dynamic pressure (`pdyn_hist.py`) reveal their most common values.
+* Simple histograms of `r_hist.py`, `bz_hist.py` and dynamic pressure (`pdyn_hist.py`) reveal their most common values.
 
 These plots show that most radii fall between 0 and 5 RE while `Bz` usually lies within roughly ±10 nT, and pdyn concentrates around 3 nPa. With more labelled crossings the model can be trained on a larger set and the validation loss (about 2.8 RE with the sample data) generally improves.
 
@@ -92,7 +98,7 @@ magnetopause surface under example solar wind conditions.
 
 ## Importance
 
-The uniqueness of this research lies in the dynamic nature of the magnetopause. Unlike most existing models that rely heavily on theoretical formulations, this study introduces a data-driven approach trained exclusively on empirical observations focused on the r[re] position influenced by solar wind conditions. While it focuses specifically on the dayside magnetopause, the model offers a fresh perspective by capturing variability and interactions, contributing a novel and practical viewpoint to magnetopause modeling.
+The uniqueness of this research lies in the dynamic nature of the magnetopause. Unlike most existing models that rely heavily on theoretical formulations, this study introduces a data-driven approach trained exclusively on empirical observations focused on the radial distance (in Earth radii) influenced by solar wind conditions. While it focuses specifically on the dayside magnetopause, the model offers a fresh perspective by capturing variability and interactions, contributing a novel and practical viewpoint to magnetopause modeling.
 
 ## Acknowledgment
 

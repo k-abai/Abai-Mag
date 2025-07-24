@@ -26,6 +26,7 @@ def valtest(df, model_file='my_model2.keras'):
         The plot is displayed directly and nothing is returned.
     """
     data = makedata(df)
+
     #df of useful variables
     df_subset = data.iloc[:, 8:20] 
    

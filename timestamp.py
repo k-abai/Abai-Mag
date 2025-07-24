@@ -49,4 +49,3 @@ def timestamp(df):
     #timestamp = timestamp.astype(str)
     timestamp = pd.to_datetime(df_start,utc=True)
     return timestamp
-#want to add loop delete rows with NaN values in time stamp

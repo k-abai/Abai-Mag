@@ -9,6 +9,7 @@ from tensorflow import keras
 import joblib
 from makedata import makedata
 
+
 def xyz_predict(df, model_file='my_model2.keras'):
     """Predict XYZ positions from magnetopause observations.
 
@@ -24,6 +25,7 @@ def xyz_predict(df, model_file='my_model2.keras'):
     list of DataFrame
         List containing the predicted X, Y and Z coordinates.
     """
+
     data = makedata(df)
     #df of useful variables
     df_subset = data.iloc[:, 8:20] 
@@ -63,5 +65,6 @@ def xyz_predict(df, model_file='my_model2.keras'):
     Y = r * (np.sin(lat)) * np.sin(lon)
     Z = r * (np.cos(lat))
     
-    coordinates = [X, Y, Z]
-    return coordinates
+    xyz_predict = [X,Y,Z]
+    return xyz_predict
+
