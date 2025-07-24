@@ -35,19 +35,33 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Virtual environment directories
 tfenv/
 venv/
 .venv/
 
-# Ignore all data files
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data and model files
 *.h5
 *.csv
 *.npy
 *.pkl
-
-# Ignore model files
 *.keras
 
-# Ignore any local configuration files that might be used for development
-__pycache__/
-*.py[cod]
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Misc
+.DS_Store

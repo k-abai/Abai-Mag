@@ -104,7 +104,7 @@ The uniqueness of this research lies in the dynamic nature of the magnetopause. 
 
 I would like to extend my sincere thanks to **Connor O'Brien** ([connor-obrien888](https://github.com/connor-obrien888)) for his mentorship and support throughout the development of this project.
 
-Connor's guidance helped shape both the structure and logic of the codebase, and his contributions were instrumental in my learning process. Special thanks for providing the `sw_loader.py` module, which played a key role in development.
+Connor's guidance helped shape both the structure and logic of the codebase, and his contributions were instrumental in my learning process. Special thanks for providing the `sw_loader.py` module, and magnetopause crossing data which played a key role in development.
 
 > His work: [https://github.com/connor-obrien888](https://github.com/connor-obrien888)
 
