@@ -5,6 +5,20 @@ Abai-Mag is a small collection of Python scripts for training a neural network t
 predict magnetopause location. It learns from magnetopause crossing data and
 solar wind parameters (taken from the OMNI database). The resulting model can be used to predict the radial distance or 3‑D location of the magnetopause from simple input parameters.
 
+## Why This Project Matters
+
+Abai-Mag emphasizes **system-level ML engineering** rather than isolated model
+development. The project demonstrates my process in designing a modular, maintainable
+pipeline where data processing, experimentation, and visualization are clearly
+separated and reproducible.
+
+This structure reflects real-world ML workflows, where long-term usability is the priority.
+The project highlights how engineering decisions enable faster iteration, clearer evaluation, and more
+reliable downstream analysis.
+
+Abai-Mag serves as a foundation for building research prototypes that can realistically evolve into production-ready
+systems.
+
 
 ## Installation
 
