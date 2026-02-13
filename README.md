@@ -7,14 +7,11 @@ solar wind parameters (taken from the OMNI database). The resulting model can be
 
 ## Why This Project Matters
 
-Abai-Mag emphasizes **system-level ML engineering** rather than isolated model
-development. The project demonstrates my process in designing a modular, maintainable
+Abai-Mag provides a novel take on magnetopause modeling in refrence to solar wind interactions. Most models refrence theories, formulas, and assumptions of solar wind interaction and how they affect magnetopause behavoir. Abai-mag has no presupposed formulas, rather the model uses a large dataset and neurel networks to test theories d Does this model match or disprove current magnetopause assumptions? 
+
+The project demonstrates my process in designing a modular, maintainable
 pipeline where data processing, experimentation, and visualization are clearly
 separated and reproducible.
-
-This structure reflects real-world ML workflows, where long-term usability is the priority.
-The project highlights how engineering decisions enable faster iteration, clearer evaluation, and more
-reliable downstream analysis.
 
 Abai-Mag serves as a foundation for building research prototypes that can realistically evolve into production-ready
 systems.
