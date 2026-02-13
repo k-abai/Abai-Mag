@@ -7,7 +7,7 @@ solar wind parameters (taken from the OMNI database). The resulting model can be
 
 ## Why This Project Matters
 
-Abai-Mag provides a novel take on magnetopause modeling in refrence to solar wind interactions. Most models refrence theories, formulas, and assumptions of solar wind interaction and how they affect magnetopause behavoir. Abai-mag has no presupposed formulas, rather the model uses a large dataset and neurel networks to test theories d Does this model match or disprove current magnetopause assumptions? 
+Abai-Mag provides a novel take on magnetopause modeling in reference to solar wind interactions. Most models reference theories, formulas, and assumptions of solar wind interaction and how they affect magnetopause behavior. Abai-mag has no presupposed formulas, rather the model uses a large dataset and neural networks to test theories. Does this model match or disprove current magnetopause assumptions? 
 
 The project demonstrates my process in designing a modular, maintainable
 pipeline where data processing, experimentation, and visualization are clearly
