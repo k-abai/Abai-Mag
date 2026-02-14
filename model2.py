@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 21 22:22:50 2025
-
-@author: kekea
-"""
+"""Training script for the magnetopause prediction model."""
 
 
 import tensorflow as tf
